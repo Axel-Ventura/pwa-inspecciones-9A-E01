@@ -5,7 +5,6 @@
 - Grupo y equipo: 10 - 10
 - Repositorio del equipo: 
 
- rama-manelic
 ## Integrante: Reyes Torres Manelic Alitzel 
 
 - **Mi contribución concreta y enlace a archivo, commit anterior o revisión:** 
@@ -56,9 +55,7 @@
 - Uso de IA: herramienta, propósito, partes influenciadas y validación propia (o «no utilicé IA»): Si utilicé IA, como apoyo para poder redactar mis ideas de forma que fueran claras y entendibles, pero no solo copié y pegué, lo ajusté a mis propias palabras y verifiqué que coincidiera con lo definido en requirements.md
 
 
-
-
- main
+## Integrante: Reyes Torres Manelic Alitzel 
 
 - **Decisión que puedo explicar y por qué:** 
   Declarar explícitamente en el `README.md` las funcionalidades que aún no han sido implementadas (Service Worker, Manifest, Modo Offline, Sincronización, Notificaciones y Autenticación). Decidí estipularlas para delimitarlas con claridad como alcance de entregas académicas futuras y evitar confusiones en la revisión de la versión actual.
