@@ -4,7 +4,7 @@
 
 ## Estado
 
-Propuesta: 6 de septiembre de 2026. Pendiente de revisión y confirmación por el resto del equipo.
+Aceptada: 6 de septiembre de 2026. El equipo revisó la comparación de alternativas y confirmó la estrategia PWA para el proyecto.
 
 ## Contexto y restricciones
 
