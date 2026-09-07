@@ -2,7 +2,7 @@
 
 > Un solo archivo compartido. Repitan la sección siguiente por cada integrante; cada persona escribe y explica su propia evidencia. Se aceptan evidencias previas equivalentes. El SHA final se entrega en Classroom después del último commit, para evitar modificar el commit que se está identificando.
 
-- Grupo y equipo: 10 - 10
+- Grupo y equipo: A - 10
 - Repositorio del equipo: 
 
 ## Integrante: Reyes Torres Manelic Alitzel 
