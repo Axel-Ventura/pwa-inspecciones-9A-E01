@@ -1,76 +1,56 @@
-# Evidencia individual del equipo
+# Evidencia individual
 
-> Un solo archivo compartido. Repitan la sección siguiente por cada integrante; cada persona escribe y explica su propia evidencia. Se aceptan evidencias previas equivalentes. El SHA final se entrega en Classroom después del último commit, para evitar modificar el commit que se está identificando.
+## Integrante: Sánchez Ventura Axel Eduardo 
 
-- Grupo y equipo: A - 10
-- Repositorio del equipo: 
+- Estudiante: Sánchez Ventura Axel Eduardo
 
-## Integrante: Reyes Torres Manelic Alitzel 
+- Commit SHA evaluado: []
 
-- **Mi contribución concreta y enlace a archivo, commit anterior o revisión:** 
-  Estructuración y documentación completa del archivo `README.md` (detallando propósito, comandos de ejecución `npm ci`, `npm run dev`, `npm run verify` y limitaciones del proyecto) y registro de evidencia individual para la entrega de la Semana 1.
-=======
-## Integrante: [Axel Eduardo Sánchez Ventura]
+- Decisión técnica que puedo explicar:
+  Integré el AppShell como estructura común de la aplicación mediante `src/components/app-shell.tsx` y lo incorporé desde `src/app/layout.tsx`. La decisión permite mantener una estructura compartida para la navegación principal y el contenido de las páginas, manteniendo separados el shell y el contenido específico de la página.
+- Prueba que ejecuté y resultado:
+  Ejecuté `npm run build` y la compilación terminó correctamente con `Compiled successfully`, generando las páginas estáticas sin errores. También ejecuté `npm run test` y la prueba disponible del starter terminó con `starter.spec.mjs: PASS`. Finalmente, ejecuté `npm run dev` y comprobé visualmente que la aplicación cargara correctamente en `http://localhost:3000`, mostrando la navegación y las inspecciones sintéticas.
 
-- Mi contribución concreta y enlace a archivo, commit anterior o revisión:
-  Preparé la documentación de requisitos del producto en `docs/requirements.md`, incluyendo el problema y contexto, usuarios y escenarios, requisitos funcionales, requisitos no funcionales, datos sintéticos, límites y criterios de aceptación de la Semana 1.
+- Limitación o fallo diagnosticado:
+  Los datos de las inspecciones todavía provienen de información sintética y estática. Los estados de carga, error y vacío están contemplados en la estructura de `page.tsx`, pero la fuente de datos actual no utiliza todavía una operación asíncrona que produzca esos estados durante la ejecución normal.
 
-- Decisión que puedo explicar y por qué:
-  Definí los requisitos considerando que la conectividad intermitente es una restricción importante del escenario. Por ello, se documentó como requisito futuro la posibilidad de conservar información sin conexión y sincronizarla posteriormente, sin afirmar que esta funcionalidad ya esté implementada en la Semana 1.
+- Cambio que podría defender o modificar en vivo:
+  Puedo explicar y modificar la estructura de `AppShell`, incluyendo la navegación principal, el uso de `children` para recibir el contenido de la página y su integración desde `layout.tsx`. También puedo modificar los estados definidos en `page.tsx` y explicar cómo se presenta cada uno.
 
-- Comando o prueba proporcionada que ejecuté:
-  `npm ci`
-  
-  `npm run dev`
-  
-  `npm run verify`
-
-- Resultado real que observé:
-  `npm ci` terminó correctamente y se instalaron las dependencias del proyecto.
-
-  `npm run dev` inició correctamente el servidor de Next.js en `http://localhost:3000` y la aplicación mostró las tres inspecciones sintéticas.
-
-  `npm run verify` ejecutó la prueba proporcionada y posteriormente realizó el build. La prueba terminó con `starter.spec.mjs: PASS`, la compilación terminó con `✓ Compiled successfully` y finalmente se obtuvo `Verificación técnica: pass`. También se generó `reports/verification.json`.
-
-- Qué verifica esa prueba y qué no verifica:
-  La verificación comprueba que la prueba proporcionada por el starter pasa y que el proyecto puede compilarse correctamente. También permite obtener un reporte técnico de la ejecución.
-
-  No verifica la calidad del análisis de requisitos, la justificación de la estrategia PWA, la implementación de funcionalidades offline o sincronización futuras, ni garantiza por sí sola la ausencia de todos los posibles problemas de seguridad o secretos.
-
-- Limitación, dificultad o riesgo que identifiqué:
-  Una limitación de esta verificación es que un resultado técnico `pass` no significa que toda la actividad esté correctamente evaluada. La documentación y la decisión sobre la estrategia del producto requieren revisión académica. Además, las funcionalidades offline y sincronización todavía no forman parte de la implementación de esta semana.
-
-- Uso de IA: herramienta, propósito, partes influenciadas y validación propia (o «no utilicé IA»):
-  Utilicé ChatGPT como apoyo para organizar y redactar propuestas para la documentación de requisitos de la actividad. La IA influyó en la estructura y redacción de `docs/requirements.md`. Revisé el contenido manualmente y comprobé que correspondiera con las instrucciones de la actividad y con el funcionamiento real del starter.
+- Uso declarado de IA (herramienta, propósito, validación):
+  Utilicé como apoyo para organizar y revisar la implementación del shell y los estados solicitados para la Semana 2. La solución fue revisada manualmente y validada mediante `npm run build`, `npm run test` y la ejecución local de la aplicación.
 
 
-## Integrante: Paniagua González Concepción Guadalupe
-
-- Mi contribución concreta y enlace a archivo, commit anterior o revisión: Redacté el documento decision-record.md: estado y fecha, contexto y restricciones, comparación de las cuatro alternativas (PWA, web tradicional, app nativa y multiplataforma), la decisión, consecuencias, riesgos y validación futura. Archivo en el que trabaje: docs/decision-record.md.
-- Decisión que puedo explicar y por qué: Descarté la app nativa porque se requeriría tanto para iOS como para Android, duplicando el trabajo de desarrollo, y ese tiempo no se ajusta a las 14 semanas que tenemos para trabajar. Además de que debía de ser publicada en tiendas de aplicaciones.
-- Comando o prueba proporcionada que ejecuté: npm run verify
-- Resultado real que observé: starter.spec.mjs: PASS. Next.js compiló correctamente (4/4). Resultado final fue: "Verificación técnica: pass. Revisión académica: pendiente. Reporte: reports/verification.json"
-- Qué verifica esa prueba y qué no verifica: Verifica que existan ciertos archivos, que el test pase y que el proyecto compile sin errores. No verifica el contenido de los documentos y si hay datos reales que estan expuestos
-- Limitación, dificultad o riesgo que identifiqué: Esta semana no se implementó ninguna funcionalidad, entonces las decisiones documentadas no se pueden comprobar con una prueba real
-- Uso de IA: herramienta, propósito, partes influenciadas y validación propia (o «no utilicé IA»): Si utilicé IA, como apoyo para poder redactar mis ideas de forma que fueran claras y entendibles, pero no solo copié y pegué, lo ajusté a mis propias palabras y verifiqué que coincidiera con lo definido en requirements.md
 
 
-## Integrante: Reyes Torres Manelic Alitzel 
+## Integrante: 
 
-- **Decisión que puedo explicar y por qué:** 
-  Declarar explícitamente en el `README.md` las funcionalidades que aún no han sido implementadas (Service Worker, Manifest, Modo Offline, Sincronización, Notificaciones y Autenticación). Decidí estipularlas para delimitarlas con claridad como alcance de entregas académicas futuras y evitar confusiones en la revisión de la versión actual.
+- Estudiante: 
+- Commit SHA evaluado:
+- Decisión técnica que puedo explicar:
+  [Completar con su propia decisión técnica.]
+- Prueba que ejecuté y resultado:
+  [Completar con el comando ejecutado y el resultado real.]
+- Limitación o fallo diagnosticado:
+  [Completar con la limitación o fallo encontrado.]
+- Cambio que podría defender o modificar en vivo:
+  [Completar con un cambio realizado por el integrante.]
+- Uso declarado de IA (herramienta, propósito, validación):
+  [Completar con su uso de IA y la validación realizada.]
 
-- **Comando o prueba proporcionada que ejecuté:** 
-  `npm ci`, `npm run dev` y `npm run verify`
+---
 
-- **Resultado real que observé:** 
-  Visualización correcta de la PWA con las 3 inspecciones sintéticas en `http://localhost:3000`. Al ejecutar la prueba de verificación técnica se obtuvo la salida: `Verificación técnica: pass. Revisión académica: pendiente.`
+## Integrante: 
 
-- **Qué verifica esa prueba y qué no verifica:** 
-  Verifica la presencia de la estructura base de archivos requerida, la ejecución exitosa de la suite inicial `starter.spec.mjs` y la compilación correcta del proyecto mediante `next build`. No verifica comportamientos avanzados como la instalación en dispositivos, la persistencia offline de datos ni la sincronización en segundo plano.
-
-- **Limitación, dificultad o riesgo que identifiqué:** 
-  Conflicto inicial de permisos al clonar en el directorio `/Users` del entorno Mac, resuelto al ubicarse dentro del directorio personal `~`. Asimismo, el starter actual carece de soporte PWA offline.
-
-- **Uso de IA: herramienta, propósito, partes influenciadas y validación propia:** 
-  Uso de IA para estructurar y redactar la documentación técnica del `README.md` y la evidencia individual según los lineamientos académicos; validado manualmente mediante la ejecución de los comandos locales en la terminal.
+- Estudiante:
+- Commit SHA evaluado:
+- Decisión técnica que puedo explicar:
+  [Completar con su propia decisión técnica.]
+- Prueba que ejecuté y resultado:
+  [Completar con el comando ejecutado y el resultado real.]
+- Limitación o fallo diagnosticado:
+  [Completar con la limitación o fallo encontrado.]
+- Cambio que podría defender o modificar en vivo:
+  [Completar con un cambio realizado por el integrante.]
+- Uso declarado de IA (herramienta, propósito, validación):
+  [Completar con su uso de IA y la validación realizada.]
