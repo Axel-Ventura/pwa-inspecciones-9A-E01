@@ -4,7 +4,18 @@
 
 - Estudiante: Sánchez Ventura Axel Eduardo
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+## Integrante: Reyes Torres Manelic Alitzel (MART)
+
+- **Mi contribución concreta y enlace a archivo, commit anterior o revisión:** 
+  Estructuración y documentación completa del archivo `README.md` (detallando propósito, comandos `npm ci`, `npm run dev`, `npm run verify` y limitaciones) y registro de evidencia individual.
+=======
+ rama-manelic
+## Integrante: Reyes Torres Manelic Alitzel 
+=======
 - Commit SHA evaluado: []
+>>>>>>> ad078289ad69c686cb8a48ad4b73d653f4e43348
 
 - Decisión técnica que puedo explicar:
   Integré el AppShell como estructura común de la aplicación mediante `src/components/app-shell.tsx` y lo incorporé desde `src/app/layout.tsx`. La decisión permite mantener una estructura compartida para la navegación principal y el contenido de las páginas, manteniendo separados el shell y el contenido específico de la página.
@@ -36,6 +47,13 @@
   npm ci: el resultado que obtuve fue la instalacion de dependencias sin ningun problema
   npm run build: compiló de manera exitosa y sin errores
 
+<<<<<<< HEAD
+ main
+>>>>>>> 34fc09326b8eeddb6399004268be4753423088de
+
+- **Decisión que puedo explicar y por qué:** 
+  Declarar explícitamente en el `README.md` las funcionalidades que aún no están implementadas (Service Worker, Manifest, Modo Offline, Sincronización, Notificaciones y Autenticación) para delimitar el alcance de la Semana 1 y evitar confusiones en la revisión.
+=======
 - Limitación o fallo diagnosticado:
   El manifest.webmanifest no se puede probar de forma completa esta semana, ya que la instalación (que el ícono aparezca en la pantalla de inicio y que el modo standalone funcione) solo se puede verificar directamente en el navegador, y esa prueba todavía no se realiza en esta semana.
   
@@ -44,11 +62,22 @@
 
 - Uso declarado de IA (herramienta, propósito, validación):
   Si, lo utilice para apoyarme y poder entender las diferencias entre las opciones de display y todo lo que implica cada una de las opciones para poder decidir sobre una y tambien para verificar que el manifest pudiera cumplir con los campos mímos que se requerian para poder adaptarlo a mis necesidades.
+>>>>>>> ad078289ad69c686cb8a48ad4b73d653f4e43348
 
 ---
 
 ## Integrante: 
 
+<<<<<<< HEAD
+- **Qué verifica esa prueba y qué no verifica:** 
+  Verifica la presencia de la estructura base de archivos, la ejecución exitosa de `starter.spec.mjs` y la compilación con `next build`. No verifica instalación PWA, persistencia offline ni sincronización.
+
+- **Limitación, dificultad o riesgo que identifiqué:** 
+  Permisos iniciales en `/Users` (resueltos trabajando desde `~`). La aplicación actual no cuenta con soporte offline.
+
+- **Uso de IA: herramienta, propósito, partes influenciadas y validación propia:** 
+  Uso de IA para estructurar la documentación técnica según los lineamientos académicos; validado manualmente mediante la ejecución de comandos locales.
+=======
 - Estudiante:
 - Commit SHA evaluado:
 - Decisión técnica que puedo explicar:
@@ -61,3 +90,4 @@
   [Completar con un cambio realizado por el integrante.]
 - Uso declarado de IA (herramienta, propósito, validación):
   [Completar con su uso de IA y la validación realizada.]
+>>>>>>> ad078289ad69c686cb8a48ad4b73d653f4e43348
