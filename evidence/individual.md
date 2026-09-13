@@ -23,20 +23,27 @@
 
 
 
-## Integrante: 
+## Integrante: Paniagua González Concepción Guadalupe
 
-- Estudiante: 
+- Estudiante: Paniagua González Concepción Guadalupe - 3523110114
+
 - Commit SHA evaluado:
+
 - Decisión técnica que puedo explicar:
-  [Completar con su propia decisión técnica.]
+  Me encargue de definir el manifest.webmanifest con "scope" y "start_url" en "/" para que cubra toda la aplicación, con "display" en "standalone" para que al instalarse se vea como una app nativa real aunque no lo sea, elegi el background_color y el theme_color en #1F4E79 para que se mantenga igual con el resto del proyecto. También agregue los icons en dos tamaños: 192x192 y 512x512, ya que cada uno se usa para cubrir distintos tamaños de la pantalla segun se requiera.
+
 - Prueba que ejecuté y resultado:
-  [Completar con el comando ejecutado y el resultado real.]
+  npm ci: el resultado que obtuve fue la instalacion de dependencias sin ningun problema
+  npm run build: compiló de manera exitosa y sin errores
+
 - Limitación o fallo diagnosticado:
-  [Completar con la limitación o fallo encontrado.]
+  El manifest.webmanifest no se puede probar de forma completa esta semana, ya que la instalación (que el ícono aparezca en la pantalla de inicio y que el modo standalone funcione) solo se puede verificar directamente en el navegador, y esa prueba todavía no se realiza en esta semana.
+  
 - Cambio que podría defender o modificar en vivo:
-  [Completar con un cambio realizado por el integrante.]
+  Podrí explicar el porque elegí "standalone" en display, en vez de alguna otra opcion como "fullscreen" o "browser" y esto es porque standalone oculta la barra de direcciones del navegador pero conserva elementos del sistema operativo como la barra de estado, lo cual hace que se vea mas profesional y visualmente mejor ya que si se utiliza fullscreen se oculta todo y no seria la mejor opcion.
+
 - Uso declarado de IA (herramienta, propósito, validación):
-  [Completar con su uso de IA y la validación realizada.]
+  Si, lo utilice para apoyarme y poder entender las diferencias entre las opciones de display y todo lo que implica cada una de las opciones para poder decidir sobre una y tambien para verificar que el manifest pudiera cumplir con los campos mímos que se requerian para poder adaptarlo a mis necesidades.
 
 ---
 
