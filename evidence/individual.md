@@ -4,18 +4,7 @@
 
 - Estudiante: Sánchez Ventura Axel Eduardo
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-## Integrante: Reyes Torres Manelic Alitzel (MART)
-
-- **Mi contribución concreta y enlace a archivo, commit anterior o revisión:** 
-  Estructuración y documentación completa del archivo `README.md` (detallando propósito, comandos `npm ci`, `npm run dev`, `npm run verify` y limitaciones) y registro de evidencia individual.
-=======
- rama-manelic
-## Integrante: Reyes Torres Manelic Alitzel 
-=======
-- Commit SHA evaluado: []
->>>>>>> ad078289ad69c686cb8a48ad4b73d653f4e43348
+- Commit SHA evaluado: fefc647c14f0dfd844442a16b1dd5ec10c8cb446
 
 - Decisión técnica que puedo explicar:
   Integré el AppShell como estructura común de la aplicación mediante `src/components/app-shell.tsx` y lo incorporé desde `src/app/layout.tsx`. La decisión permite mantener una estructura compartida para la navegación principal y el contenido de las páginas, manteniendo separados el shell y el contenido específico de la página.
@@ -33,12 +22,11 @@
 
 
 
-
 ## Integrante: Paniagua González Concepción Guadalupe
 
 - Estudiante: Paniagua González Concepción Guadalupe - 3523110114
 
-- Commit SHA evaluado:
+- Commit SHA evaluado: 64b42d983bac903e155f666443d17437a729c6ce
 
 - Decisión técnica que puedo explicar:
   Me encargue de definir el manifest.webmanifest con "scope" y "start_url" en "/" para que cubra toda la aplicación, con "display" en "standalone" para que al instalarse se vea como una app nativa real aunque no lo sea, elegi el background_color y el theme_color en #1F4E79 para que se mantenga igual con el resto del proyecto. También agregue los icons en dos tamaños: 192x192 y 512x512, ya que cada uno se usa para cubrir distintos tamaños de la pantalla segun se requiera.
@@ -47,13 +35,6 @@
   npm ci: el resultado que obtuve fue la instalacion de dependencias sin ningun problema
   npm run build: compiló de manera exitosa y sin errores
 
-<<<<<<< HEAD
- main
->>>>>>> 34fc09326b8eeddb6399004268be4753423088de
-
-- **Decisión que puedo explicar y por qué:** 
-  Declarar explícitamente en el `README.md` las funcionalidades que aún no están implementadas (Service Worker, Manifest, Modo Offline, Sincronización, Notificaciones y Autenticación) para delimitar el alcance de la Semana 1 y evitar confusiones en la revisión.
-=======
 - Limitación o fallo diagnosticado:
   El manifest.webmanifest no se puede probar de forma completa esta semana, ya que la instalación (que el ícono aparezca en la pantalla de inicio y que el modo standalone funcione) solo se puede verificar directamente en el navegador, y esa prueba todavía no se realiza en esta semana.
   
@@ -62,32 +43,25 @@
 
 - Uso declarado de IA (herramienta, propósito, validación):
   Si, lo utilice para apoyarme y poder entender las diferencias entre las opciones de display y todo lo que implica cada una de las opciones para poder decidir sobre una y tambien para verificar que el manifest pudiera cumplir con los campos mímos que se requerian para poder adaptarlo a mis necesidades.
->>>>>>> ad078289ad69c686cb8a48ad4b73d653f4e43348
 
----
 
-## Integrante: 
 
-<<<<<<< HEAD
-- **Qué verifica esa prueba y qué no verifica:** 
-  Verifica la presencia de la estructura base de archivos, la ejecución exitosa de `starter.spec.mjs` y la compilación con `next build`. No verifica instalación PWA, persistencia offline ni sincronización.
+## Integrante: Reyes Torres Manelic Alitzel
 
-- **Limitación, dificultad o riesgo que identifiqué:** 
-  Permisos iniciales en `/Users` (resueltos trabajando desde `~`). La aplicación actual no cuenta con soporte offline.
+ Commit SHA evaluado:  6204de43e8da29b81af26561bf2879224a106b6d
 
-- **Uso de IA: herramienta, propósito, partes influenciadas y validación propia:** 
-  Uso de IA para estructurar la documentación técnica según los lineamientos académicos; validado manualmente mediante la ejecución de comandos locales.
-=======
-- Estudiante:
-- Commit SHA evaluado:
-- Decisión técnica que puedo explicar:
-  [Completar con su propia decisión técnica.]
-- Prueba que ejecuté y resultado:
-  [Completar con el comando ejecutado y el resultado real.]
+- **Mi contribución concreta y enlace a archivo, commit anterior o revisión:** 
+  Estructuración y documentación completa del archivo `README.md` (detallando propósito, comandos `npm ci`, `npm run dev`, `npm run verify` y limitaciones) y registro de evidencia individual.
+
+- **Decisión que puedo explicar y por qué:** 
+  Declarar explícitamente en el `README.md` las funcionalidades que aún no están implementadas (Service Worker, Manifest, Modo Offline, Sincronización, Notificaciones y Autenticación) para delimitar el alcance de la Semana 1 y evitar confusiones en la revisión.
+
 - Limitación o fallo diagnosticado:
-  [Completar con la limitación o fallo encontrado.]
+  El manifest.webmanifest no se puede probar de forma completa esta semana, ya que la instalación (que el ícono aparezca en la pantalla de inicio y que el modo standalone funcione) solo se puede verificar directamente en el navegador, y esa prueba todavía no se realiza en esta semana.
+  
 - Cambio que podría defender o modificar en vivo:
-  [Completar con un cambio realizado por el integrante.]
+  Podrí explicar el porque elegí "standalone" en display, en vez de alguna otra opcion como "fullscreen" o "browser" y esto es porque standalone oculta la barra de direcciones del navegador pero conserva elementos del sistema operativo como la barra de estado, lo cual hace que se vea mas profesional y visualmente mejor ya que si se utiliza fullscreen se oculta todo y no seria la mejor opcion.
+
 - Uso declarado de IA (herramienta, propósito, validación):
-  [Completar con su uso de IA y la validación realizada.]
->>>>>>> ad078289ad69c686cb8a48ad4b73d653f4e43348
+  Si, lo utilice para apoyarme y poder entender las diferencias entre las opciones de display y todo lo que implica cada una de las opciones para poder decidir sobre una y tambien para verificar que el manifest pudiera cumplir con los campos mímos que se requerian para poder adaptarlo a mis necesidades.
+
