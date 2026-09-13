@@ -1,10 +1,10 @@
-# Evidencia individual del equipo
+# Evidencia individual
 
-> Un solo archivo compartido. Repitan la sección siguiente por cada integrante; cada persona escribe y explica su propia evidencia. Se aceptan evidencias previas equivalentes. El SHA final se entrega en Classroom después del último commit, para evitar modificar el commit que se está identificando.
+## Integrante: Sánchez Ventura Axel Eduardo 
 
-- Grupo y equipo: 10 - 10
-- Repositorio del equipo: 
+- Estudiante: Sánchez Ventura Axel Eduardo
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 ## Integrante: Reyes Torres Manelic Alitzel (MART)
 
@@ -13,69 +13,62 @@
 =======
  rama-manelic
 ## Integrante: Reyes Torres Manelic Alitzel 
-
-- **Mi contribución concreta y enlace a archivo, commit anterior o revisión:** 
-  Estructuración y documentación completa del archivo `README.md` (detallando propósito, comandos de ejecución `npm ci`, `npm run dev`, `npm run verify` y limitaciones del proyecto) y registro de evidencia individual para la entrega de la Semana 1.
 =======
-## Integrante: [Axel Eduardo Sánchez Ventura]
+- Commit SHA evaluado: []
+>>>>>>> ad078289ad69c686cb8a48ad4b73d653f4e43348
 
-- Mi contribución concreta y enlace a archivo, commit anterior o revisión:
-  Preparé la documentación de requisitos del producto en `docs/requirements.md`, incluyendo el problema y contexto, usuarios y escenarios, requisitos funcionales, requisitos no funcionales, datos sintéticos, límites y criterios de aceptación de la Semana 1.
+- Decisión técnica que puedo explicar:
+  Integré el AppShell como estructura común de la aplicación mediante `src/components/app-shell.tsx` y lo incorporé desde `src/app/layout.tsx`. La decisión permite mantener una estructura compartida para la navegación principal y el contenido de las páginas, manteniendo separados el shell y el contenido específico de la página.
+- Prueba que ejecuté y resultado:
+  Ejecuté `npm run build` y la compilación terminó correctamente con `Compiled successfully`, generando las páginas estáticas sin errores. También ejecuté `npm run test` y la prueba disponible del starter terminó con `starter.spec.mjs: PASS`. Finalmente, ejecuté `npm run dev` y comprobé visualmente que la aplicación cargara correctamente en `http://localhost:3000`, mostrando la navegación y las inspecciones sintéticas.
 
-- Decisión que puedo explicar y por qué:
-  Definí los requisitos considerando que la conectividad intermitente es una restricción importante del escenario. Por ello, se documentó como requisito futuro la posibilidad de conservar información sin conexión y sincronizarla posteriormente, sin afirmar que esta funcionalidad ya esté implementada en la Semana 1.
+- Limitación o fallo diagnosticado:
+  Los datos de las inspecciones todavía provienen de información sintética y estática. Los estados de carga, error y vacío están contemplados en la estructura de `page.tsx`, pero la fuente de datos actual no utiliza todavía una operación asíncrona que produzca esos estados durante la ejecución normal.
 
-- Comando o prueba proporcionada que ejecuté:
-  `npm ci`
-  
-  `npm run dev`
-  
-  `npm run verify`
+- Cambio que podría defender o modificar en vivo:
+  Puedo explicar y modificar la estructura de `AppShell`, incluyendo la navegación principal, el uso de `children` para recibir el contenido de la página y su integración desde `layout.tsx`. También puedo modificar los estados definidos en `page.tsx` y explicar cómo se presenta cada uno.
 
-- Resultado real que observé:
-  `npm ci` terminó correctamente y se instalaron las dependencias del proyecto.
+- Uso declarado de IA (herramienta, propósito, validación):
+  Utilicé como apoyo para organizar y revisar la implementación del shell y los estados solicitados para la Semana 2. La solución fue revisada manualmente y validada mediante `npm run build`, `npm run test` y la ejecución local de la aplicación.
 
-  `npm run dev` inició correctamente el servidor de Next.js en `http://localhost:3000` y la aplicación mostró las tres inspecciones sintéticas.
 
-  `npm run verify` ejecutó la prueba proporcionada y posteriormente realizó el build. La prueba terminó con `starter.spec.mjs: PASS`, la compilación terminó con `✓ Compiled successfully` y finalmente se obtuvo `Verificación técnica: pass`. También se generó `reports/verification.json`.
-
-- Qué verifica esa prueba y qué no verifica:
-  La verificación comprueba que la prueba proporcionada por el starter pasa y que el proyecto puede compilarse correctamente. También permite obtener un reporte técnico de la ejecución.
-
-  No verifica la calidad del análisis de requisitos, la justificación de la estrategia PWA, la implementación de funcionalidades offline o sincronización futuras, ni garantiza por sí sola la ausencia de todos los posibles problemas de seguridad o secretos.
-
-- Limitación, dificultad o riesgo que identifiqué:
-  Una limitación de esta verificación es que un resultado técnico `pass` no significa que toda la actividad esté correctamente evaluada. La documentación y la decisión sobre la estrategia del producto requieren revisión académica. Además, las funcionalidades offline y sincronización todavía no forman parte de la implementación de esta semana.
-
-- Uso de IA: herramienta, propósito, partes influenciadas y validación propia (o «no utilicé IA»):
-  Utilicé ChatGPT como apoyo para organizar y redactar propuestas para la documentación de requisitos de la actividad. La IA influyó en la estructura y redacción de `docs/requirements.md`. Revisé el contenido manualmente y comprobé que correspondiera con las instrucciones de la actividad y con el funcionamiento real del starter.
 
 
 ## Integrante: Paniagua González Concepción Guadalupe
 
-- Mi contribución concreta y enlace a archivo, commit anterior o revisión: Redacté el documento decision-record.md: estado y fecha, contexto y restricciones, comparación de las cuatro alternativas (PWA, web tradicional, app nativa y multiplataforma), la decisión, consecuencias, riesgos y validación futura. Archivo en el que trabaje: docs/decision-record.md.
-- Decisión que puedo explicar y por qué: Descarté la app nativa porque se requeriría tanto para iOS como para Android, duplicando el trabajo de desarrollo, y ese tiempo no se ajusta a las 14 semanas que tenemos para trabajar. Además de que debía de ser publicada en tiendas de aplicaciones.
-- Comando o prueba proporcionada que ejecuté: npm run verify
-- Resultado real que observé: starter.spec.mjs: PASS. Next.js compiló correctamente (4/4). Resultado final fue: "Verificación técnica: pass. Revisión académica: pendiente. Reporte: reports/verification.json"
-- Qué verifica esa prueba y qué no verifica: Verifica que existan ciertos archivos, que el test pase y que el proyecto compile sin errores. No verifica el contenido de los documentos y si hay datos reales que estan expuestos
-- Limitación, dificultad o riesgo que identifiqué: Esta semana no se implementó ninguna funcionalidad, entonces las decisiones documentadas no se pueden comprobar con una prueba real
-- Uso de IA: herramienta, propósito, partes influenciadas y validación propia (o «no utilicé IA»): Si utilicé IA, como apoyo para poder redactar mis ideas de forma que fueran claras y entendibles, pero no solo copié y pegué, lo ajusté a mis propias palabras y verifiqué que coincidiera con lo definido en requirements.md
+- Estudiante: Paniagua González Concepción Guadalupe - 3523110114
 
+- Commit SHA evaluado:
 
+- Decisión técnica que puedo explicar:
+  Me encargue de definir el manifest.webmanifest con "scope" y "start_url" en "/" para que cubra toda la aplicación, con "display" en "standalone" para que al instalarse se vea como una app nativa real aunque no lo sea, elegi el background_color y el theme_color en #1F4E79 para que se mantenga igual con el resto del proyecto. También agregue los icons en dos tamaños: 192x192 y 512x512, ya que cada uno se usa para cubrir distintos tamaños de la pantalla segun se requiera.
 
+- Prueba que ejecuté y resultado:
+  npm ci: el resultado que obtuve fue la instalacion de dependencias sin ningun problema
+  npm run build: compiló de manera exitosa y sin errores
 
+<<<<<<< HEAD
  main
 >>>>>>> 34fc09326b8eeddb6399004268be4753423088de
 
 - **Decisión que puedo explicar y por qué:** 
   Declarar explícitamente en el `README.md` las funcionalidades que aún no están implementadas (Service Worker, Manifest, Modo Offline, Sincronización, Notificaciones y Autenticación) para delimitar el alcance de la Semana 1 y evitar confusiones en la revisión.
+=======
+- Limitación o fallo diagnosticado:
+  El manifest.webmanifest no se puede probar de forma completa esta semana, ya que la instalación (que el ícono aparezca en la pantalla de inicio y que el modo standalone funcione) solo se puede verificar directamente en el navegador, y esa prueba todavía no se realiza en esta semana.
+  
+- Cambio que podría defender o modificar en vivo:
+  Podrí explicar el porque elegí "standalone" en display, en vez de alguna otra opcion como "fullscreen" o "browser" y esto es porque standalone oculta la barra de direcciones del navegador pero conserva elementos del sistema operativo como la barra de estado, lo cual hace que se vea mas profesional y visualmente mejor ya que si se utiliza fullscreen se oculta todo y no seria la mejor opcion.
 
-- **Comando o prueba proporcionada que ejecuté:** 
-  `npm ci`, `npm run dev` y `npm run verify`
+- Uso declarado de IA (herramienta, propósito, validación):
+  Si, lo utilice para apoyarme y poder entender las diferencias entre las opciones de display y todo lo que implica cada una de las opciones para poder decidir sobre una y tambien para verificar que el manifest pudiera cumplir con los campos mímos que se requerian para poder adaptarlo a mis necesidades.
+>>>>>>> ad078289ad69c686cb8a48ad4b73d653f4e43348
 
-- **Resultado real que observé:** 
-  Visualización correcta de la PWA con las 3 inspecciones sintéticas en `http://localhost:3000`. Al ejecutar la prueba de verificación técnica se obtuvo la salida: `Verificación técnica: pass. Revisión académica: pendiente.`
+---
 
+## Integrante: 
+
+<<<<<<< HEAD
 - **Qué verifica esa prueba y qué no verifica:** 
   Verifica la presencia de la estructura base de archivos, la ejecución exitosa de `starter.spec.mjs` y la compilación con `next build`. No verifica instalación PWA, persistencia offline ni sincronización.
 
@@ -84,3 +77,17 @@
 
 - **Uso de IA: herramienta, propósito, partes influenciadas y validación propia:** 
   Uso de IA para estructurar la documentación técnica según los lineamientos académicos; validado manualmente mediante la ejecución de comandos locales.
+=======
+- Estudiante:
+- Commit SHA evaluado:
+- Decisión técnica que puedo explicar:
+  [Completar con su propia decisión técnica.]
+- Prueba que ejecuté y resultado:
+  [Completar con el comando ejecutado y el resultado real.]
+- Limitación o fallo diagnosticado:
+  [Completar con la limitación o fallo encontrado.]
+- Cambio que podría defender o modificar en vivo:
+  [Completar con un cambio realizado por el integrante.]
+- Uso declarado de IA (herramienta, propósito, validación):
+  [Completar con su uso de IA y la validación realizada.]
+>>>>>>> ad078289ad69c686cb8a48ad4b73d653f4e43348
