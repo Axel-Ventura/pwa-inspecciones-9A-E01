@@ -4,7 +4,7 @@
 
 - Estudiante: Sánchez Ventura Axel Eduardo
 
-- Commit SHA evaluado: fefc647c14f0dfd844442a16b1dd5ec10c8cb446
+- Commit SHA evaluado: 5a3f8fd724e42e6004719b1d05ced4cc51835be9
 
 - Decisión técnica que puedo explicar:
   Integré el AppShell como estructura común de la aplicación mediante `src/components/app-shell.tsx` y lo incorporé desde `src/app/layout.tsx`. La decisión permite mantener una estructura compartida para la navegación principal y el contenido de las páginas, manteniendo separados el shell y el contenido específico de la página.
