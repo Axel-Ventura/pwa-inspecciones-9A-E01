@@ -1,4 +1,4 @@
-node_modules/
+register-service-worker.tsnode_modules/
 .next/
 out/
 coverage/
@@ -6,4 +6,5 @@ coverage/
 .env*
 !.env.example
 reports/verification.json
+node_modules
 

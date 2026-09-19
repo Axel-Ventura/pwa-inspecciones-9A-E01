@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { AppShell } from "../components/app-shell";
+import { ServiceWorkerRegister } from "../lib/pwa/service-worker-register";
 
 export const metadata: Metadata = {
   title: "Inspecciones de laboratorio",
@@ -17,6 +18,7 @@ export default function RootLayout({
     <html lang="es-MX">
       <body>
         <AppShell>{children}</AppShell>
+        <ServiceWorkerRegister />
       </body>
     </html>
   );
