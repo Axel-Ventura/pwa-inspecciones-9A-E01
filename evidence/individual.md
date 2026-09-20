@@ -87,15 +87,27 @@ La implementación fue revisada manualmente y validada mediante `npm run build`,
 
 
 
-## Integrante:
+## Integrante: Paniagua González Concepción Guadalupe
+
+- Estudiante: Paniagua González Concepción Guadalupe - 3523110114 
 - Commit SHA evaluado:
+
 ### Decisión técnica que puedo explicar
+Me encargué de crear los archivos de prueba para simular el entorno de un Service Worker, ya que el código de public/sw.js no corre en un navegador real dentro de las pruebas. Agregué ese archivo dentro del entorno simulado y ejecuté los eventos install, activate y fetch para comprobar cual era el resultado.
+
 ### Prueba que ejecuté y resultado
+npm run test: las 4 pruebas pasaron (manifest.spec.mjs, starter.spec.mjs, service-worker.spec.ts, offline.spec.ts) y su resultado fue PASS
+npm run build: compiló correctamente sin errores
+npm run verify: resultado final "Verificación técnica: pass"
+
 ### Limitación o fallo diagnosticado
-### Cambio que podría defender o modificar en vivo
+Al correr npm run test aparece una advertencia de Node (MODULE_TYPELESS_PACKAGE_JSON) porque package.json no declara "type": "module", aunque esto no afectó el resultado de las pruebas 
+
+### Cambio que podcomo ría defender o modificar en vivo
+Simulé que se pierde la conexión sin que hubiera nada guardado, con esto comprobé que la app responde con el código 503, que esa respuesta sea una página html y que el mensaje que este dentro de esa página sea "Sin conexión" para que los usuarios entiendan que es lo que pasa y no genere confusión
+
 ### Uso declarado de IA
-
-
+Usé IA como apoyo para crear los archivos de prueba, ya que no sabía cómo simular el entorno de un Service Worker para poder probarlo.
 
 
 ## Integrante:
