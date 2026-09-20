@@ -90,7 +90,7 @@ La implementación fue revisada manualmente y validada mediante `npm run build`,
 ## Integrante: Paniagua González Concepción Guadalupe
 
 - Estudiante: Paniagua González Concepción Guadalupe - 3523110114 
-- Commit SHA evaluado:
+- Commit SHA evaluado: 9c81266d5346091c71ee45abe30d2dda34d979f0
 
 ### Decisión técnica que puedo explicar
 Me encargué de crear los archivos de prueba para simular el entorno de un Service Worker, ya que el código de public/sw.js no corre en un navegador real dentro de las pruebas. Agregué ese archivo dentro del entorno simulado y ejecuté los eventos install, activate y fetch para comprobar cual era el resultado.
