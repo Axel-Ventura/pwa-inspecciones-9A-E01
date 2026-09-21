@@ -3,7 +3,7 @@
 ## Integrante: Sánchez Ventura Axel Eduardo
 
 - Estudiante: Sánchez Ventura Axel Eduardo
-- Commit SHA evaluado: ............
+- Commit SHA evaluado: 33d638635aa522ae459dbb98e3f419d1a805a7fb
 
 ### Decisión técnica que puedo explicar
 
@@ -101,7 +101,7 @@ Usé IA como apoyo para crear los archivos de prueba, ya que no sabía cómo sim
 ## Integrante: Reyes Torres Manelic Alitzel
 
 - Estudiante: Reyes Torres Manelic Alitzel - 3523110736
-- Commit SHA evaluado: ad078289ad69c686cb8a48ad4b73d653f4e43348
+- Commit SHA evaluado: d4de5ca4444f724b19afe1add5266db8377e502d
 
 ### Decisión técnica que puedo explicar
 
