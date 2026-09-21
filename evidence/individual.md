@@ -3,7 +3,7 @@
 ## Integrante: Sánchez Ventura Axel Eduardo
 
 - Estudiante: Sánchez Ventura Axel Eduardo
-- Commit SHA evaluado: 33d638635aa522ae459dbb98e3f419d1a805a7fb
+- Commit SHA evaluado: 2fb60ecd2c214d32d00a8d2d9a4f54736b131aa8
 
 ### Decisión técnica que puedo explicar
 
