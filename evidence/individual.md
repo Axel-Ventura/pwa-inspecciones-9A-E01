@@ -14,7 +14,7 @@
 
 - Estudiante: Paniagua González Concepción Guadalupe - 3523110114
 
-- Commit SHA evaluado:
+- Commit SHA evaluado: e01b60946a929ca7b780ed590e7c28a6945fffe8
 
 - Decisión técnica que puedo explicar: Me encargué de crear tests/rendering.spec.ts para verificar los 5 requisitos de renderizado: que el listado use "use client" y useState, que el detalle no use "use client" y busque la inspección con el id, que se use el componente LoadingState, que exista manejo para una inspección inexistente, y que ambas rutas usen los datos reales. Para la prueba de datos, importé el archivo real y verifiqué que cada inspección tenga todos sus campos, para que la prueba falle si alguien elimina uno.
 
