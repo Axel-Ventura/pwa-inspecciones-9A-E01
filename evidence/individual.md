@@ -4,7 +4,7 @@
 
 - Estudiante: Sánchez Ventura Axel Eduardo
 
-- Commit SHA evaluado:
+- Commit SHA evaluado: 292f6962bec95d5e2596cfc2773b461e846a7008
 
 - Decisión técnica que puedo explicar: Utilicé CSR para la lista de inspecciones porque necesita interacción del usuario mediante filtros sin recargar la página. Utilicé SSR para el detalle de una inspección porque los datos pueden renderizarse en el servidor a partir del ID de la ruta. También reutilicé un componente `LoadingState` para los estados de carga.
 
