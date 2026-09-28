@@ -18,6 +18,13 @@ test -e 'src/app/inspecciones/page.tsx' \
   && test -e 'docs/rendering-decision.md' \
   && test -e 'tests/rendering.spec.ts'
 
+# Week 05
+test -e 'src/lib/sync/queue.ts' \
+  && test -e 'src/lib/storage/schema.ts' \
+  && test -e 'src/lib/sync/conflict-policy.ts' \
+  && test -e 'docs/sync-policy.md' \
+  && test -e 'tests/sync.spec.ts'
+
 test -f README.md
 
 ! rg -n -i '(api[_-]?key|secret|password|token)' --glob '!public-tests/check.sh' .
