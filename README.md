@@ -61,3 +61,13 @@ Al ejecutar `npm run test`, se valida la estructura del manifiesto web y la pres
 
 ## Limitaciones Relevantes (Semana 2)
 - Las pruebas automáticas verifican la validez del manifiesto y la existencia de los recursos en tiempo de compilación. La instalación PWA real en pantalla de inicio y la sincronización offline mediante Service Worker deben comprobarse manualmente en el navegador.
+## Semana 5: Persistencia Local y Sincronización
+
+### Conceptos e Implementación:
+
+- **Almacenamiento local:** Se implementó `src/lib/storage/schema.ts` utilizando `localStorage` para garantizar que las operaciones de inspección sobrevivan al cierre o recarga de la pestaña del navegador.
+- **Operaciones pendientes:** Estructura de datos que encola las modificaciones realizadas sin conexión (`pending`) para ser procesadas posteriormente.
+- **Idempotencia:** Cada registro cuenta con un `operationId` único que permite al servidor evitar la ejecución duplicada de una misma acción.
+- **Reintentos:** Manejo del atributo `retryCount` para el seguimiento de intentos fallidos de envío.
+- **Sincronización exitosa:** Proceso mediante el cual los elementos completados son removidos de la cola local o marcados como procesados (`completed`).
+- **Resolución de conflictos y respuestas fuera de orden:** Inclusión del campo `version` para validar que los cambios locales y remotos mantengan consistencia temporal y evitar sobreescrituras accidentales.
