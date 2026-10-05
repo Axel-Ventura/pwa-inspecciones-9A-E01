@@ -4,7 +4,7 @@
 
 - Estudiante: Sánchez Ventura Axel Eduardo
 
-- Commit SHA evaluado:
+- Commit SHA evaluado: 5a4d1c6e53908838ce96eddd1a557d9ef4336c28
 
 - Decisión técnica que puedo explicar: Definí una política de sincronización basada en `operationId` para evitar duplicados, reintentos mediante `retryCount` y resolución de conflictos mediante versiones, evitando que una versión anterior sobrescriba una más reciente.
 
