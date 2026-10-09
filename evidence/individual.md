@@ -1,57 +1,39 @@
 # Evidencia individual
 
-## Integrante: Sánchez Ventura Axel Eduardo
+- **Estudiante:** Sánchez Ventura Axel Eduardo
 
-- Estudiante: Sánchez Ventura Axel Eduardo
+- Commit SHA evaluado: 
 
-- Commit SHA evaluado: 5a4d1c6e53908838ce96eddd1a557d9ef4336c28
+-Decisión técnica que puedo explicar: Definí un contrato común para las capacidades del dispositivo mediante un resultado explícito de éxito o fallo (`ok/value` y `ok/reason`). Establecí que la cámara, la geolocalización y las notificaciones deben ser opcionales, solicitar permisos únicamente bajo una acción del usuario y mantener funcional el flujo principal mediante fallbacks.
 
-- Decisión técnica que puedo explicar: Definí una política de sincronización basada en `operationId` para evitar duplicados, reintentos mediante `retryCount` y resolución de conflictos mediante versiones, evitando que una versión anterior sobrescriba una más reciente.
+- Prueba que ejecuté y resultado: Preparé `tests/capabilities.spec.ts` con pruebas para API no disponible, permisos concedidos o rechazados, errores de cámara, timeout de geolocalización y notificaciones. La ejecución final queda pendiente de integrar las implementaciones de los tres módulos y ejecutar la suite completa.
 
-- Prueba que ejecuté y resultado: Ejecuté `tests/sync.spec.ts`, validando inserción de operaciones, idempotencia, reintentos, sincronización exitosa, fallos de sincronización, resolución de conflictos y respuestas fuera de orden. Resultado: pruebas exitosas.
+- Limitación o fallo diagnosticado: Las pruebas automatizadas utilizan APIs simuladas, por lo que no demuestran por sí solas el funcionamiento en dispositivos reales. Se requiere una comprobación manual en un navegador compatible para validar permisos y comportamiento real.
 
-- Limitación o fallo diagnosticado: La actividad no cuenta con un backend real de sincronización, por lo que las pruebas utilizan handlers y datos sintéticos para reproducir los escenarios de sincronización.
+- Cambio que podría defender o modificar en vivo: Puedo modificar un caso de prueba para simular el rechazo de un permiso o la ausencia de una API y demostrar que el resultado es controlado y que el flujo principal puede continuar.
 
-- Cambio que podría defender o modificar en vivo: Puedo modificar la política de resolución de conflictos o agregar un caso de prueba para un nuevo escenario de reintento, duplicación o respuesta fuera de orden y explicar cómo afecta el comportamiento de la cola.
-
-- Uso declarado de IA (herramienta, propósito, validación): ChatGPT, para apoyar la estructuración inicial de `tests/sync.spec.ts` y `docs/sync-policy.md`. El código y las decisiones fueron revisados, adaptados y validados mediante las pruebas locales del proyecto.
+- Uso declarado de IA (herramienta, propósito, validación): Utilizado como apoyo para estructurar el contrato técnico, los casos de prueba y la documentación de capacidades. Revisaré y adaptaré las propuestas al código integrado y validaré el resultado ejecutando las pruebas, el build y los comandos de verificación del proyecto.
 
 
-## Integrante: Reyes Torres Manelic Alitzel
-
-- **Commit SHA evaluado:** 6665806c8a7a687ff47f836f94d53112988c408e
-
-- **Mi contribución concreta y enlace a archivo, commit anterior o revisión:** 
-  Implementación del esquema de datos con persistencia local en `src/lib/storage/schema.ts` utilizando `localStorage` para garantizar la supervivencia de las operaciones encoladas ante cierres de pestaña. Actualización del archivo `README.md` con los conceptos clave de sincronización (idempotencia, reintentos, resolución de conflictos y manejo de versiones) y registro de evidencia de la Semana 5.
-
-- **Decisión que puedo explicar y por qué:** 
-  La segregación estricta de responsabilidades en `src/lib/storage/schema.ts`. Se delimitó la funcionalidad del archivo exclusivamente a la representación de tipos y la persistencia en `localStorage` (`operationId`, `inspectionId`, `type`, `payload`, `version`, `status`, `createdAt`, `retryCount`), asegurando deliberadamente que no contenga lógica para procesar la cola, ejecutar reintentos, resolver conflictos o comunicarse con el servidor backend.
-
-- **Limitación o fallo diagnosticado:** 
-  Aunque `localStorage` permite la persistencia de datos entre recargas y cierres de pestaña, está limitado por el hilo principal síncrono del navegador y carece de soporte nativo para transacciones complejas o almacenamiento de volúmenes masivos de datos (a diferencia de IndexedDB). Además, persiste la advertencia `MODULE_TYPELESS_PACKAGE_JSON` durante las pruebas al no tener `"type": "module"` en `package.json`.
-
-- **Cambio que podría defender o modificar en vivo:** 
-  Podría explicar y migrar la capa de persistencia de `localStorage` a `IndexedDB` (utilizando la API nativa o librerías como Dexie) si las inspecciones incluyeran archivos pesados como fotografías o metadatos complejos que superen la capacidad típica de 5 MB de `localStorage`.
-
-- **Uso declarado de IA (herramienta, propósito, validación):** 
-  Utilicé Gemini para estructurar las funciones helper de persistencia en TypeScript y sintetizar la documentación técnica en `README.md`. Validé la implementación ejecutando los comandos `npm test`, `npm run build` y `npm run dev` de forma limpia sin errores en consola ni en la compilación de Next.js.
 
 
-## Integrante: Paniagua González Concepción Guadalupe
+- Estudiante:
+- Commit SHA evaluado:
+- Decisión técnica que puedo explicar:
+- Prueba que ejecuté y resultado:
+- Limitación o fallo diagnosticado:
+- Cambio que podría defender o modificar en vivo:
+- Uso declarado de IA (herramienta, propósito, validación):
 
-- **Commit SHA evaluado**: 5bfdaf622289f1cd8ea253ca7d34893aaedaca00
 
-- **Mi contribución concreta y enlace a archivo, commit anterior o revisión:**
-  Me encargué de crear `src/lib/sync/queue.ts` y `src/lib/sync/conflict-policy.ts`. `queue.ts` es una clase que guarda las operaciones pendientes, evita que se repitan, y lleva el control de cuáles ya se sincronizaron o cuáles fallaron. `conflict-policy.ts` es el que se encarga de decidir cuál versión de una inspección se queda cuando hay dos versiones distintas (se queda la que es más nueva). También instalé tsx porque hacía falta para que se pudieran correr las pruebas.
 
-- **Decisión que puedo explicar y por qué:** 
-  Decidí que cada archivo hiciera solo una cosa: `queue.ts` únicamente administra la cola de operaciones (agregarlas, marcarlas como exitosas o fallidas, y reintentarlas) y que `conflict-policy.ts` solo decidiera qué versión de una inspección se debe conservar cuando hay dos distintas. Decidí que fueran separados porque hace más fácil entender y corregir cada parte por separado si algo falla.
 
-  - **Limitación o fallo diagnosticado:**
-  Tuve un problema al crear la carpeta `sync`: la dejé al mismo nivel que `lib` en vez de dentro de ella, lo cual hacía que las pruebas no encontraran los archivos y lo corregí moviendo la carpeta al lugar correcto.
 
-  - **Cambio que podría defender o modificar en vivo:**
-  Podría explicar por qué cuando falla la sincronización, la operación no se borra: se queda guardada como pendiente, para que se pueda volver a intentar después, parecido a como WhatsApp no borra un mensaje si no hay señal, sino que lo reintenta más tarde.
+- Estudiante:
+- Commit SHA evaluado:
+- Decisión técnica que puedo explicar:
+- Prueba que ejecuté y resultado:
+- Limitación o fallo diagnosticado:
+- Cambio que podría defender o modificar en vivo:
+- Uso declarado de IA (herramienta, propósito, validación):
 
-- **Uso declarado de IA (herramienta, propósito, validación):**
-  Utilice IA como apoyo para diseñar y construir `queue.ts` y `conflict-policy.ts`, también me ayudó a diagnosticar el error de la carpeta mal ubicada. Ejecuté las pruebas con el código real `npm run test` confirmé que las 8 pruebas pasaran y tambien que el proyecto compila correctamente (`npm run build`)
