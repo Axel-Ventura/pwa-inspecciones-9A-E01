@@ -17,13 +17,13 @@
 
 
 
-- Estudiante:
-- Commit SHA evaluado:
-- Decisión técnica que puedo explicar:
-- Prueba que ejecuté y resultado:
-- Limitación o fallo diagnosticado:
-- Cambio que podría defender o modificar en vivo:
-- Uso declarado de IA (herramienta, propósito, validación):
+- **Estudiante:** Paniagua González Concepción Guadalupe
+- Commit SHA evaluado: 
+- Decisión técnica que puedo explicar: En camera.ts y geolocation.ts, las funciones no lanzan errores. Si algo sale mal (el usuario dice que no, el navegador no tiene la función o hay una falla), regresan un resultado con ok: false y una razón, y si todo sale bien regresan ok: true con el dato. Esto es así porque la cámara y la ubicación son opcionales: si fallan, la inspección debe poder seguir sin ellas. La cámara solo pide video y que la ubicación devuelva únicamente latitud y longitud, para no guardar datos de mas
+- Prueba que ejecuté y resultado: `npm run build` compiló sin errores. Revisé que el código no tuviera throw ni devolviera datos extra de ubicación. Probé en Chrome con localhost: al bloquear la cámara salió el error NotAllowedError, y en ubicación al permitir salieron coordenadas y al bloquear salió el código 1 de permiso denegado. Las pruebas de tests/capabilities.spec.ts quedan pendientes hasta integrar el client.ts del otro integrante 
+- Limitación o fallo diagnosticado: Las pruebas usan APIs simuladas, así que no demuestran que la cámara y la ubicación funcionen en un dispositivo real; eso requiere una prueba manual en el navegador
+- Cambio que podría defender o modificar en vivo: Podría explicar por qué la ubicación devuelve solo latitud y longitud. El navegador puede entregar más datos, como altitud, velocidad y rumbo, pero el código solo toma la latitud y la longitud y deja fuera los demás, porque no hacen falta para la inspección y guardarlos sería recolectar datos de mas que no son requeridos
+- Uso declarado de IA (herramienta, propósito, validación): Usé IA para escribir el código de camera.ts y geolocation.ts. Yo lo guardé en el proyecto, comprobé que cumpliera lo que pide la especificación y lo validé con npm run build y con pruebas manuales en Chrome
 
 
 
