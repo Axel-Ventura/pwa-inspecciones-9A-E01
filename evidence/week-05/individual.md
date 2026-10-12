@@ -19,7 +19,11 @@
 
 ## Integrante: Reyes Torres Manelic Alitzel
 
+ Updated upstream
 - **Commit SHA evaluado:** 6665806c8a7a687ff47f836f94d53112988c408e
+
+- **Commit SHA evaluado:** <6665806c8a7a687ff47f836f94d53112988c408e
+ Stashed changes
 
 - **Mi contribución concreta y enlace a archivo, commit anterior o revisión:** 
   Implementación del esquema de datos con persistencia local en `src/lib/storage/schema.ts` utilizando `localStorage` para garantizar la supervivencia de las operaciones encoladas ante cierres de pestaña. Actualización del archivo `README.md` con los conceptos clave de sincronización (idempotencia, reintentos, resolución de conflictos y manejo de versiones) y registro de evidencia de la Semana 5.
