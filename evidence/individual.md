@@ -2,7 +2,7 @@
 
 - **Estudiante:** Sánchez Ventura Axel Eduardo
 
-- Commit SHA evaluado: 
+- Commit SHA evaluado: f5ad45581b1ddc4db7115dc2b8eed546c91960d4
 
 -Decisión técnica que puedo explicar: Definí un contrato común para las capacidades del dispositivo mediante un resultado explícito de éxito o fallo (`ok/value` y `ok/reason`). Establecí que la cámara, la geolocalización y las notificaciones deben ser opcionales, solicitar permisos únicamente bajo una acción del usuario y mantener funcional el flujo principal mediante fallbacks.
 
