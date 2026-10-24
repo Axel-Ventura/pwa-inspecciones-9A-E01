@@ -11,7 +11,7 @@
 # Evidencia individual
 
 - Estudiante: Paniagua González Concepción Guadalupe
-- Commit SHA evaluado: 
+- Commit SHA evaluado: a1050c4d6d50cbf5138169947a782ff7eaa26bbc
 - Decisión técnica que puedo explicar: Entiendo que las pruebas unitarias revisan cada parte por separado (la cola, la política de conflictos y el almacenamiento), y que la de integración las prueba juntas. Para eso se uso un localStorage simulado que se comparte entre "recargas": cada new SyncQueue() representa abrir la aplicación otra vez, y así se comprueba que los datos siguen guardados.
 - Prueba que ejecuté y resultado: Primero corrí mis pruebas contra el código original y salieron 34 pruebas: 33 pasan y 1 falla. La que falla es "addPendingOperation no duplica la misma operación" (2 !== 1), que demostró el defecto. Después de corregirlo con autorización, volví a correr npm test y pasaron las 34, y npm run build compiló sin errores.
 - Limitación o fallo diagnosticado: Las pruebas usan un localStorage simulado, no un navegador real, así que no demuestran el comportamiento en un dispositivo. El defecto que encontré fue que addPendingOperation() guardaba dos veces la misma operación, lo corregí agregando una revisión por operationId antes de guardar.
