@@ -33,6 +33,10 @@ export function saveOperations(operations: SyncOperation[]): void {
 
 export function addPendingOperation(operation: SyncOperation): void {
   const operations = getStoredOperations();
+  const alreadyExists = operations.some(
+    (existing) => existing.operationId === operation.operationId
+  );
+  if (alreadyExists) return;
   operations.push(operation);
   saveOperations(operations);
 }
