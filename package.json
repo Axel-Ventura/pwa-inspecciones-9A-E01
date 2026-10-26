@@ -6,7 +6,11 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+ feature/e2e-inspections
+    "test": "node tests/starter.spec.mjs && node tests/service-worker.spec.ts && node tests/offline.spec.ts && node tests/rendering.spec.ts && tsx tests/sync.spec.ts && tsx tests/capabilities.spec.ts",
+
     "test": "node tests/starter.spec.mjs && node tests/service-worker.spec.ts && node tests/offline.spec.ts && node tests/rendering.spec.ts && tsx tests/sync.spec.ts && tsx tests/capabilities.spec.ts && tsx --test tests/unit/queue.spec.ts tests/unit/conflict-policy.spec.ts tests/unit/storage.spec.ts tests/integration/sync-persistence.spec.ts",
+ dev
     "verify": "node scripts/verify.mjs"
   },
   "dependencies": {
@@ -15,7 +19,8 @@
     "react-dom": "18.3.1"
   },
   "devDependencies": {
-    "@types/node": "^20.14.15",
+    "@playwright/test": "^1.64.1",
+    "@types/node": "^20.19.43",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "tsx": "^4.23.15",
