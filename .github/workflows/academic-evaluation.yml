@@ -1,0 +1,65 @@
+
+name: Week 08 - Pruebas completas
+
+on:
+  push:
+    branches: [dev, main]
+  pull_request:
+    branches: [dev, main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  testing:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Configurar Node 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+
+      - name: Instalar dependencias
+        run: npm ci --ignore-scripts --no-audit --no-fund
+
+      - name: Ejecutar lint
+        run: npm run lint
+
+      - name: Ejecutar pruebas acumuladas, unitarias e integración
+        run: npm test
+
+      - name: Generar cobertura
+        run: |
+          mkdir -p coverage
+          npm run test:coverage
+
+      - name: Compilar aplicación
+        run: npm run build
+
+      - name: Instalar Chromium
+        run: npx playwright install --with-deps chromium
+
+      - name: Ejecutar pruebas E2E
+        run: npm run test:e2e
+
+      - name: Generar reporte de verificación
+        run: npm run verify
+
+      - name: Publicar reportes
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: week-08-results
+          if-no-files-found: warn
+          path: |
+            coverage/
+            test-results/
+            playwright-report/
+            reports/verification.json
