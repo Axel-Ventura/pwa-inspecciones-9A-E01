@@ -6,12 +6,14 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
- feature/e2e-inspections
-    "test": "node tests/starter.spec.mjs && node tests/service-worker.spec.ts && node tests/offline.spec.ts && node tests/rendering.spec.ts && tsx tests/sync.spec.ts && tsx tests/capabilities.spec.ts",
-
-    "test": "node tests/starter.spec.mjs && node tests/service-worker.spec.ts && node tests/offline.spec.ts && node tests/rendering.spec.ts && tsx tests/sync.spec.ts && tsx tests/capabilities.spec.ts && tsx --test tests/unit/queue.spec.ts tests/unit/conflict-policy.spec.ts tests/unit/storage.spec.ts tests/integration/sync-persistence.spec.ts",
- dev
-    "verify": "node scripts/verify.mjs"
+    "test:legacy": "node tests/starter.spec.mjs && node tests/service-worker.spec.ts && node tests/offline.spec.ts && node tests/rendering.spec.ts && tsx tests/sync.spec.ts && tsx tests/capabilities.spec.ts",
+    "test:unit": "tsx --test tests/unit/*.spec.ts",
+    "test:integration": "tsx --test tests/integration/*.spec.ts",
+    "test:e2e": "playwright test",
+    "test": "npm run test:legacy && npm run test:unit && npm run test:integration",
+    "verify": "node scripts/verify.mjs",
+    "lint": "next lint",
+    "test:coverage": "tsx --test --experimental-test-coverage --test-reporter=lcov --test-reporter-destination=coverage/lcov.info tests/unit/*.spec.ts tests/integration/*.spec.ts"
   },
   "dependencies": {
     "next": "14.2.35",
@@ -23,6 +25,8 @@
     "@types/node": "^20.19.43",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
+    "eslint": "^8.57.1",
+    "eslint-config-next": "^14.2.35",
     "tsx": "^4.23.15",
     "typescript": "^5.4.5"
   }

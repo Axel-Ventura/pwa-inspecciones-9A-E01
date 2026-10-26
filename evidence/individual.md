@@ -1,12 +1,12 @@
 # Evidencia individual
 
-- Estudiante:
+- Estudiante:Sánchez Ventura Axel Eduardo
 - Commit SHA evaluado:
-- Decisión técnica que puedo explicar:
-- Prueba que ejecuté y resultado:
-- Limitación o fallo diagnosticado:
-- Cambio que podría defender o modificar en vivo:
-- Uso declarado de IA (herramienta, propósito, validación):
+- Decisión técnica que puedo explicar: Definí la estrategia de pruebas en docs/test-strategy.md, organizando la validación en tres niveles: pruebas unitarias para reglas de negocio, integración para persistencia y sincronización, y E2E para el flujo de inspecciones. Decidí conservar las pruebas acumuladas de semanas anteriores y agregar scripts independientes en package.json para facilitar la ejecución y el diagnóstico. También configuré ESLint, la generación de cobertura LCOV y un workflow propio de GitHub Actions sin modificar los checks oficiales del profesor.
+- Prueba que ejecuté y resultado:Ejecuté npm ci correctamente; npm run lint sin errores ni advertencias; npm test con las pruebas acumuladas y 34 pruebas nuevas aprobadas (26 unitarias y 8 de integración); y npm run verify, que finalizó con Verificación técnica: pass y generó reports/verification.json. También ejecuté npm run test:coverage, generando coverage/lcov.info. La medición obtenida fue de 98.31 % de líneas, 95.62 % de ramas y 89.91 % de funciones, limitada a los archivos incluidos en esa ejecución. Playwright detectó ocho pruebas E2E mediante npx playwright test --list
+- Limitación o fallo diagnosticado:Se identificó que la implementación original de addPendingOperation() permitía guardar operaciones duplicadas con el mismo operationId. El defecto fue corregido durante la integración y la prueba addPendingOperation no duplica la misma operación pasó en la ejecución final. Queda pendiente incorporar al reporte la evidencia verificable del fallo anterior a la corrección. Otra limitación es que npm run verify todavía no ejecuta automáticamente las pruebas E2E; estas tienen un comando independiente y están configuradas para ejecutarse en GitHub Actions.
+- Cambio que podría defender o modificar en vivo:Puedo explicar y modificar docs/test-strategy.md, agregar o reorganizar los scripts de package.json, ejecutar las pruebas por categoría, configurar reglas de ESLint, generar cobertura con tsx y explicar el workflow .github/workflows/academic-evaluation.yml. También puedo demostrar cómo se comprueba la idempotencia de addPendingOperation() y cómo se verifica que una prueba detecte operaciones duplicadas.
+- Uso declarado de IA (herramienta, propósito, validación):Utilicé ChatGPT de OpenAI como apoyo para estructurar y redactar docs/test-strategy.md, identificar riesgos y escenarios de prueba, preparar comandos de verificación, configurar scripts de npm, ESLint y el workflow académico, y organizar la documentación técnica. Los fragmentos influidos por IA incluyen la estrategia de pruebas, instrucciones de configuración y documentación. Revisé las propuestas frente al código del repositorio y validé personalmente los comandos mediante ejecuciones reales en PowerShell. Contrasté sus resultados con las salidas de las pruebas, el build y la cobertura. 
 
 # Evidencia individual
 
@@ -20,11 +20,11 @@
 
 # Evidencia individual
 
-- Estudiante:
-- Commit SHA evaluado:
-- Decisión técnica que puedo explicar:
-- Prueba que ejecuté y resultado:
-- Limitación o fallo diagnosticado:
-- Cambio que podría defender o modificar en vivo:
-- Uso declarado de IA (herramienta, propósito, validación):
+- Estudiante: Reyes torres Manelic Alitzel
+- Commit SHA evaluado:8c870acd027be85924e5fc3041eeab4beb84eae2
+- Decisión técnica que puedo explicar:Elegí Playwright con Chromium para automatizar las pruebas End-to-End de la PWA en un navegador real. Organicé ocho casos de prueba en tests/e2e/inspections.spec.ts, utilizando selectores accesibles para comprobar el listado de inspecciones, filtros por estado, navegación al detalle y manejo de identificadores inexistentes. Configuré playwright.config.ts para iniciar automáticamente el servidor, establecer tiempos de espera y generar reportes JSON, HTML y evidencias de fallos.
+- Prueba que ejecuté y resultado: Implementé ocho pruebas E2E que verifican la carga del listado, los filtros «Requieren atención» y «Sin incidencias», el restablecimiento de filtros, la navegación al detalle, el regreso al listado, el manejo de una inspección inexistente y el acceso directo a un detalle válido. Se confirmó que Playwright reconoce los ocho casos mediante npx playwright test --list. 
+- Limitación o fallo diagnosticado:as pruebas E2E requieren tener Chromium instalado y la aplicación compilada, ya que Playwright utiliza npm run start para levantar el servidor. Durante la integración se detectó que faltaba instalar localmente @playwright/test, lo cual se resolvió mediante npm ci. Además, la aplicación utiliza datos sintéticos y no dispone de un backend real, por lo que las pruebas se concentran en los comportamientos visibles de consulta, filtrado y navegación.
+- Cambio que podría defender o modificar en vivo:Puedo modificar un escenario de tests/e2e/inspections.spec.ts, agregar una validación para otro laboratorio, ajustar los selectores accesibles, comprobar los atributos aria-pressed de los filtros o modificar la configuración de Playwright para generar reportes y capturas cuando falle una prueba. También puedo explicar cómo se inicia el servidor de pruebas mediante webServer.
+- Uso declarado de IA (herramienta, propósito, validación):Se utilizó IA como apoyo para  estructurar escenarios E2E, consultar sintaxis de Playwright o revisar selectores.
 

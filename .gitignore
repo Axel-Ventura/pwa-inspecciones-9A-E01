@@ -1,10 +1,20 @@
-register-service-worker.tsnode_modules/
+
+# Dependencias
+node_modules/
+
+# Compilación de Next.js
 .next/
 out/
+
+# Reportes generados
 coverage/
+test-results/
+playwright-report/
+reports/verification.json
+
+# Logs
 *.log
+
+# Variables de entorno
 .env*
 !.env.example
-reports/verification.json
-node_modules
-
