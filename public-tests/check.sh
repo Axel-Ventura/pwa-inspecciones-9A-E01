@@ -40,6 +40,13 @@ test -e 'tests/unit/' \
   && test -e 'docs/test-strategy.md' \
   && test -e '.github/workflows/academic-evaluation.yml'
 
+# Week 09 - Modelo de amenazas y privacidad aplicada
+test -e 'docs/threat-model.md' \
+  && test -e 'docs/privacy-data-inventory.md' \
+  && test -e 'src/lib/security/' \
+  && test -e 'tests/security.spec.ts' \
+  && test -e 'public/robots.txt'
+
 # Documentación general
 test -f README.md
 
