@@ -9,8 +9,9 @@
     "test:legacy": "node tests/starter.spec.mjs && node tests/service-worker.spec.ts && node tests/offline.spec.ts && node tests/rendering.spec.ts && tsx tests/sync.spec.ts && tsx tests/capabilities.spec.ts",
     "test:unit": "tsx --test tests/unit/*.spec.ts",
     "test:integration": "tsx --test tests/integration/*.spec.ts",
+    "test:security": "tsx --test tests/security.spec.ts",
     "test:e2e": "playwright test",
-    "test": "npm run test:legacy && npm run test:unit && npm run test:integration",
+    "test": "npm run test:legacy && npm run test:unit && npm run test:integration && npm run test:security",
     "verify": "node scripts/verify.mjs",
     "lint": "next lint",
     "test:coverage": "tsx --test --experimental-test-coverage --test-reporter=lcov --test-reporter-destination=coverage/lcov.info tests/unit/*.spec.ts tests/integration/*.spec.ts"

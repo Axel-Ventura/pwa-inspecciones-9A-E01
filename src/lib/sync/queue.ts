@@ -1,5 +1,6 @@
 import type { SyncOperation } from "../storage/schema";
 import { getStoredOperations, saveOperations } from "../storage/schema";
+import { validateSyncOperation, type ValidationResult } from "../security";
 
 /**
  * SyncQueue administra las operaciones pendientes de sincronización.
@@ -9,6 +10,9 @@ import { getStoredOperations, saveOperations } from "../storage/schema";
  * - Conservar operaciones que fallan, permitiendo reintentarlas.
  * - Marcar como sincronizadas las operaciones exitosas.
  * - Procesar la cola contra un "handler" de sincronización simulado.
+ *
+ * Responsabilidad agregada (W09):
+ * - Validar cada operación antes de aceptarla (src/lib/security).
  *
  * No es responsabilidad de esta clase:
  * - Decidir qué versión de una inspección gana ante un conflicto
@@ -30,20 +34,28 @@ export class SyncQueue {
   }
 
   /**
-   * Agrega una operación a la cola. Si ya existe una operación con el mismo
+   * Agrega una operación a la cola. Primero se valida (W09): si es inválida
+   * NO se agrega y se devuelve el motivo, sin lanzar excepción ni tocar lo
+   * que ya estaba guardado. Si ya existe una operación con el mismo
    * operationId, no se agrega de nuevo (evita duplicados / idempotencia).
    */
-  enqueue(operation: SyncOperation): void {
-    const alreadyExists = this.operations.some(
-      (existing) => existing.operationId === operation.operationId
-    );
+  enqueue(operation: SyncOperation): ValidationResult<SyncOperation> {
+    const checked = validateSyncOperation(operation);
 
-    if (alreadyExists) {
-      return;
+    if (!checked.ok) {
+      return checked;
     }
 
-    this.operations.push({ ...operation });
-    this.persist();
+    const alreadyExists = this.operations.some(
+      (existing) => existing.operationId === checked.value.operationId
+    );
+
+    if (!alreadyExists) {
+      this.operations.push(checked.value);
+      this.persist();
+    }
+
+    return checked;
   }
 
   /**
